@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+/* Light Mode */
+:root {
+  --primary-color: #008080;
+  --secondary-color: #F0F0F0;
+  --accent-color: #FF6F61;
+  --background-color: #FFFFFF;
+  --text-color: #444444;
+}
+
+/* Dark Mode */
+:root {
+  --primary-color-dark: #008080;
+  --secondary-color-dark: #333333;
+  --accent-color-dark: #FF6F61;
+  --background-color-dark: #121212;
+  --text-color-dark: #E0E0E0;
+}
+
+/* Base styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.button {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.card {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.header.dark-mode {
+  background-color: var(--primary-color-dark);
+  color: var(--background-color-dark);
+}
+
+.button.dark-mode {
+  background-color: var(--accent-color-dark);
+  color: var(--background-color-dark);
+}
+
+.card.dark-mode {
+  background-color: var(--secondary-color-dark);
+  color: var(--text-color-dark);
+}
