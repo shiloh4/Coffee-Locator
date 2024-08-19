@@ -11,14 +11,14 @@ export default function NavbarComponent() {
     return (
         <>
         <Navbar bg="dark" variant="dark" style={{ zIndex: 1000 }}>
-            <Container>
+            <Container direction="horizontal">
                 <Navbar.Brand href='#home' className="mx-2"> {/* logo goes here */}</Navbar.Brand>
                 <Form className="d-flex mx-2">
                     <InputGroup>
                         <Form.Control
-                            placeholder="Username"
-                            aria-label='Username'
-                            aria-describedby='Username' />
+                            placeholder="search"
+                            aria-label='search'
+                            aria-describedby='search' />
                     </InputGroup>
                 </Form>
                 <Nav className="d-flex align-items-center">
