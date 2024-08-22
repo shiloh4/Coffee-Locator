@@ -13,9 +13,11 @@ export const ThemeContextProvider = ({ children }) => {
 
     const toggleTheme = () => {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+       
     };
 
     const theme = useMemo(() => (mode === 'light' ? createTheme(lightTheme) : createTheme(darkTheme)), [mode]);
+     document.body.style.backgroundColor = theme.palette.primary.main;
 
     return (
         <ThemeContext.Provider value={{ mode, toggleTheme }}>

@@ -11,11 +11,13 @@ function App() {
   const theme = useTheme();
 
   return (
+    <div className="App">
     <ThemeContextProvider theme={lightTheme}>
       <Navbar />
       {/* <Box sx={{ height: '10%' }}/> */}
       <HomePage />
     </ThemeContextProvider>
+    </div>
   );
 }
 

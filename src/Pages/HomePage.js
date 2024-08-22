@@ -14,7 +14,7 @@ export default function HomePage() {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return(
-        <Box sx={{display: 'flex', justifyContent: 'center', borderWdith: 1}}>
+        <Box sx={{display: 'flex', justifyContent: 'center' }}>
             <Banner/>
         </Box>
     );
