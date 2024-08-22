@@ -2,22 +2,26 @@ import { createTheme } from '@mui/material/styles';
 
 const lightTheme = createTheme({
     palette: {
-      mode: 'light',
       primary: {
-        main: '#008080', // teal
+        main: '#D2B48C', // cream beige
       },
       secondary: {
-        main: '#F0F0F0', // off-white
+        main: '#6F4E37', // coffee brown
       },
       accent: {
-        main: '#FF6F61', // coral
+        primary: '#3B2F2F', // espresso dark
+        secondary: '#D2691E', // cinnamon
+        tertiary: '#F5F5DC', // sugar white
       },
       background: {
         default: '#FFFFFF', // White
         paper: '#F5F5F5',
       },
       text: {
-        primary: '#444444',
+        primary: '#3B2F2F', // espresso dark
+        secondary: '#6F4E37', // coffee brown
+        accent: '#D2691E', // cinnamon
+        background: '#F5F5DC', // sugar white
       },
       link: {
         primary: '#003057',
@@ -67,25 +71,31 @@ const lightTheme = createTheme({
   
   const darkTheme = createTheme({
     palette: {
-      mode: 'dark',
       primary: {
-        main: '#008080', // teal
+        main: '#6F4E37', // coffee brown
+        light: '#6F4E37', // coffee brown
+        dark: '#6F4E37', // coffee brown
       },
       secondary: {
-        main: '#333333', // Dark gray
+        main: '#D2B48C', // cream beige
       },
       accent: {
-        main: '#FF6F61', // coral
+        primary: '#3B2F2F', // espresso dark
+        secondary: '#D2691E', // cinnamon
+        tertiary: '#F5F5DC', // sugar white
       },
       background: {
-        default: '#121212', // Dark Navy
-        paper: '#121212',
+        default: '#FFFFFF', // White
+        paper: '#F5F5F5',
       },
       text: {
-        primary: '#E0E0E0', // off-white
+        primary: '#F5F5DC', // sugar white
+        secondary: '#D2B48C', // cream beige
+        accent: '#D2691E', // cinnamon
+        background: '#3B2F2F' // espresso dark
       },
       link: {
-        primary: '#61dafb',
+        primary: '#003057',
       },
     },
     typography: {

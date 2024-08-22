@@ -8,7 +8,7 @@ import Link from '@mui/material/Link';
 import IconButton from '@mui/material/IconButton';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import AssignmentIndTwoToneIcon from '@mui/icons-material/AssignmentIndTwoTone';
+import CoffeeIcon from '@mui/icons-material/Coffee';
 import { useTheme, useMediaQuery } from '@mui/material';
 import { useThemeContext } from '../themeContextProvider';
 
@@ -17,7 +17,7 @@ function ThemeToggleButton() {
     const theme = useTheme();
   
     return (
-        <IconButton onClick={toggleTheme} sx={{color: theme.palette.accent.main}}>
+        <IconButton onClick={toggleTheme} sx={{color: theme.palette.text.primary}}>
             {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
     );
@@ -25,6 +25,7 @@ function ThemeToggleButton() {
 
 export default function NavbarComponent() {
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const navbarBgColor = theme.palette.primary.main;
 
@@ -33,24 +34,32 @@ export default function NavbarComponent() {
             <AppBar position="fixed" sx={{
                 justifyContent: "center",
                 zIndex: (theme) => theme.zIndex.drawer + 1, 
+                padding: 0,
                 display: 'flex',
                 width: '100%',
+                height: '10%',
                 alignItems: 'center',
-                backgroundColor: navbarBgColor,
+                backgroundColor: theme.palette.primary.main,
                 boxShadow: 'none',
                 backdropFilter: 'blur(10px)', // Blur effect
                 WebkitBackdropFilter: 'blur(10px)', // safari compatibility
             }}>
-                <Toolbar sx={{width: '90%', display: 'flex', justifyContent: 'space-between'}}>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Link to="/" sx={{textDecoration: 'none'}}><AssignmentIndTwoToneIcon sx={{ color: theme.palette.accent.main }}/></Link>
+                <Toolbar sx={{width: isMobile ? '100%' :'60%', display: 'flex', justifyContent: 'space-between',}} disableGutters>
+                    <Box sx={{display: 'flex', flexGrow: 0, alignItems: 'center'}}>
+                        <Link to="/" sx={{textDecoration: 'none', color: theme.palette.text.primary }}>
+                            <CoffeeIcon fontSize='large' />
+                        </Link>
+                        <Link sx={{ color: theme.palette.text.primary, alignItems: 'center' }} underline="none">
+                            <code>coffee-locator</code>
+                        </Link>
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+
+                    <Box sx={{ display: 'flex', flexGrow: 0, alignItems: 'center' }}>
                         <Link>
-                            <Button sx={{ mx: 1, textTransform: 'none', color: theme.palette.accent.main }} disableElevation>tasks</Button>
+                            <Button sx={{ mx: 1, textTransform: 'none', color: theme.palette.text.primary }} disableElevation>tasks</Button>
                         </Link>
                         <Link>
-                            <Button sx={{ mx: 1, textTransform: 'none', color: theme.palette.accent.main }} disableElevation>schedule</Button>
+                            <Button sx={{ mx: 1, textTransform: 'none', color: theme.palette.text.primary }} disableElevation>schedule</Button>
                         </Link>
                         <ThemeToggleButton />
                     </Box>
